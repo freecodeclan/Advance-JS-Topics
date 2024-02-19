@@ -8,3 +8,11 @@
 5.getElementByTag()
 
 **Updating Existing Content using JS --->** 1. innerHTML 2. outerHTML 3. textContent 4. innerText
+
+**Adding new Element using JS --->** .createElement('span') method after creating element now adding that element to DOM so we use **.appendChild(span)**
+
+**Creating Text Node --->** Means adding text into new element.. Example:--- **let myPara** = document.createElement('p') ----> myPara.textContent = 'I am Harsh Mehra' --->
+content.appendChild(myPara)
+
+**Method used to position new Element --->** **.insertAdjacentHTML()** --- Things to be kept in mind (a) Has to be called with 2 arguments (1) Location/position (2) HTML text/Content
+**Positions** 1. beforebegin 2. afterbegin 3. beforeend 4. afterend
