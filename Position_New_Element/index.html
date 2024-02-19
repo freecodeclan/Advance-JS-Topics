@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <div>
+  <div id="hello">
     <h2>Positioning an Element using JS </h2>
   </div>
 </body>
@@ -18,6 +18,13 @@
   const position = document.querySelector('h2');
   position.id = 'element'
   console.log(position);
+
+  const newPara = document.createElement('p')
+  newPara.textContent = 'Here we"ll be using .insertAdjacentElement'
+  position.insertAdjacentElement('beforeEnd', newPara)
+
+  console.log(document.querySelector('#hello'));
+
 
 </script>
 
