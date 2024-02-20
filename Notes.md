@@ -21,3 +21,7 @@ content.appendChild(myPara)
 **Example** ---> p.addEventListner('click',function(){console.log('I am para')});
 
 **The Default Action --->** This method is used to prevent default actions of any tags or events. **.preventDefault()**
+
+**Document Fragment --->** When you're working with web pages, you often need to create multiple elements and then add them to the document. Now, if you add each element directly to the document, it triggers a reflow each time, which can be inefficient, especially if you're adding a lot of elements at once.
+
+Here's where document fragments come in handy. Instead of adding each element directly to the document, you can create a document fragment, then append your elements to it. Since the fragment isn't part of the main document yet, it doesn't trigger a reflow each time you add an element. Once you've added all your elements to the fragment, you can then append the entire fragment to the document in one go. This saves a lot of time and resources because it only triggers one reflow instead of potentially many.
