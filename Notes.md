@@ -25,3 +25,19 @@ content.appendChild(myPara)
 **Document Fragment --->** When you're working with web pages, you often need to create multiple elements and then add them to the document. Now, if you add each element directly to the document, it triggers a reflow each time, which can be inefficient, especially if you're adding a lot of elements at once.
 
 Here's where document fragments come in handy. Instead of adding each element directly to the document, you can create a document fragment, then append your elements to it. Since the fragment isn't part of the main document yet, it doesn't trigger a reflow each time you add an element. Once you've added all your elements to the fragment, you can then append the entire fragment to the document in one go. This saves a lot of time and resources because it only triggers one reflow instead of potentially many.
+
+**Event Loop --->** The event loop is a key component of JavaScript's concurrency model and is responsible for executing JavaScript code, collecting and processing events, and executing queued sub-tasks. It allows JavaScript to be asynchronous and have non-blocking behavior, despite being single-threaded.
+
+Here's a simple explanation:
+
+1. JavaScript engine executes the script from top to bottom. This is the main thread of execution, also known as the "call stack".
+
+2. When it encounters operations like I/O tasks (e.g., fetching data from a server, reading a file, etc.), timers (setTimeout, setInterval), or user interactions (click, keypress events), it offloads these tasks to the Web APIs provided by the browser or Node.js environment.
+
+3. These tasks are executed separately from the main thread. Once they are finished, they are not immediately executed. Instead, they are added to a "Task Queue" (also known as "Callback Queue").
+
+4. The Event Loop constantly checks if the main thread (call stack) is empty and if there are any tasks in the Task Queue. If the call stack is empty and there are tasks waiting in the queue, it dequeues a task from the Task Queue and pushes it to the call stack to be executed.
+
+5. This process continues in a loop, hence the name "Event Loop". It allows JavaScript to handle many tasks without blocking the main thread, providing the illusion of multi-threading in a single-threaded environment.
+
+This mechanism is what allows you to write asynchronous code in JavaScript using callbacks, promises, and async/await, and it's crucial for building responsive web applications.
