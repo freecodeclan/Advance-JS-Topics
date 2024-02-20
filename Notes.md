@@ -16,3 +16,8 @@ content.appendChild(myPara)
 
 **Method used to position new Element --->** **.insertAdjacentHTML()** --- Things to be kept in mind (a) Has to be called with 2 arguments (1) Location/position (2) HTML text/Content
 **Positions** 1. beforeBegin 2. afterBegin 3. beforeEnd 4. afterEnd
+
+**.addEventListener() --->** Syntax :--- event_type.addEventListner('event_type' , 'callBack fuction')
+**Example** ---> p.addEventListner('click',function(){console.log('I am para')});
+
+**The Default Action --->** This method is used to prevent default actions of any tags or events. **.preventDefault()**
